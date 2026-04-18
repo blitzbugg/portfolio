@@ -52,6 +52,32 @@ const { title, description = "Ananthapadmanabhan M - Portfolio" } = Astro.props;
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="https://blitzbugg.vercel.app/og-preview.png" />
 		<meta name="twitter:site" content="@blitzbugg" />
+
+		<!-- JSON-LD Structured Data (Schema.org) -->
+		<script type="application/ld+json" is:inline>
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Ananthapadmanabhan M",
+				"url": "https://blitzbugg.vercel.app/",
+				"jobTitle": "Full Stack Developer",
+				"sameAs": [
+					"https://www.linkedin.com/in/ananthapadmanabhan-m/",
+					"https://github.com/blitzbugg",
+					"https://medium.com/@blitzbugg",
+					"https://blitzbugg.vercel.app/",
+					"https://x.com/blitzbugg",
+					"https://www.instagram.com/blitzbugg/",
+					"https://dev.to/blitzbugg",
+					"https://www.threads.net/@blitzbugg",
+					"https://leetcode.com/u/blitzbugg",
+					"https://www.hackerrank.com/profile/blitzbugg",
+					"https://discord.com/users/blitzbugg",
+
+				],
+				"description": "Full Stack Developer passionate about building scalable, production-ready web applications with experience in React, Node.js, and TypeScript."
+			}
+		</script>
 	</head>
 	<body class="min-h-screen selection:bg-[#4A90E2] selection:text-white overflow-x-hidden w-full bg-[#F4F4F4]">
 		<Navbar />
