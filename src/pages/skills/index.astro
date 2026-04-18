@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import SkillBadge from "../../components/SkillBadge.astro";
+import { skills } from "../../data/info";
+---
+
+<Layout title="Skills">
+  <SectionHeader title="Technical Arsenal" subtitle="Skills" />
+  
+  <div class="space-y-32 mt-20">
+    <section>
+      <h3 class="text-3xl font-black mb-12 flex items-center gap-6 text-[#2E2E2E]">
+        Frontend Development
+        <span class="h-[1px] flex-1 bg-[#E0E0E0]"></span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.frontend.map((skill) => (
+          <SkillBadge name={skill} />
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-3xl font-black mb-12 flex items-center gap-6 text-[#2E2E2E]">
+        Backend Architecture
+        <span class="h-[1px] flex-1 bg-[#E0E0E0]"></span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.backend.map((skill) => (
+          <SkillBadge name={skill} />
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-3xl font-black mb-12 flex items-center gap-6 text-[#2E2E2E]">
+        Data Management
+        <span class="h-[1px] flex-1 bg-[#E0E0E0]"></span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.database.map((skill) => (
+          <SkillBadge name={skill} />
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h3 class="text-3xl font-black mb-12 flex items-center gap-6 text-[#2E2E2E]">
+        Tooling & Infrastructure
+        <span class="h-[1px] flex-1 bg-[#E0E0E0]"></span>
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skills.tools.map((skill) => (
+          <SkillBadge name={skill} />
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>

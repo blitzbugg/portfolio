@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { projects } from "../../data/info";
+---
+
+<Layout title="Projects">
+  <SectionHeader title="Selected Projects" subtitle="Builds" />
+  
+  <p class="text-xl text-muted-foreground mb-16 max-w-2xl leading-relaxed">
+    A collection of systems I've built, ranging from institutional CMS platforms to real-time collaborative whiteboards.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {projects.map((project) => (
+      <ProjectCard {...project} />
+    ))}
+  </div>
+
+  <div class="mt-32 text-center p-16 rounded-[3rem] bg-white border border-[#E0E0E0] shadow-sm shadow-[#2E2E2E]/5">
+    <h3 class="text-3xl font-black mb-6 text-[#2E2E2E]">Have an idea?</h3>
+    <p class="text-[#2E2E2E]/60 mb-10 max-w-md mx-auto">
+      I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+    </p>
+    <a href="mailto:ananthapadmanabhanm98@gmail.com" class="px-10 py-5 rounded-2xl bg-[#2E2E2E] text-white font-black hover:scale-105 transition-transform inline-block uppercase tracking-widest text-sm shadow-xl shadow-[#2E2E2E]/10">
+      Get in touch
+    </a>
+  </div>
+</Layout>

@@ -1,0 +1,128 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import { getMediumPosts } from "../../lib/medium";
+import Tegaki from "tegaki/astro";
+import caveat from "tegaki/fonts/caveat";
+
+// Fetch posts at build time (SSG)
+const posts = await getMediumPosts();
+const featuredPost = posts[0];
+const remainingPosts = posts.slice(1);
+---
+
+<Layout title="Blogs | Ananthapadmanabhan">
+  <SectionHeader title="Published Articles" subtitle="Blogs" />
+
+  <p class="text-xl text-[#2E2E2E]/60 mb-16 max-w-2xl leading-relaxed">
+    Sharing insights on MERN stack development, production systems, and design philosophy.
+  </p>
+
+  {posts.length > 0 ? (
+    <div class="space-y-16">
+      {/* Featured Post */}
+      {featuredPost && (
+        <a 
+          href={featuredPost.link} 
+          target="_blank" 
+          class="group block relative overflow-hidden rounded-[3rem] bg-white border border-[#E0E0E0] shadow-sm hover:shadow-xl shadow-[#2E2E2E]/5 transition-all duration-700"
+        >
+          <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-1/2 h-80 lg:h-auto overflow-hidden relative">
+              {featuredPost.thumbnail ? (
+                <img 
+                  src={featuredPost.thumbnail} 
+                  alt={featuredPost.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              ) : (
+                <div class="w-full h-full bg-[#F4F4F4] flex items-center justify-center text-[#2E2E2E]/10 font-black text-4xl">
+                  {featuredPost.title.substring(0, 2)}
+                </div>
+              )}
+              <div class="absolute inset-0 bg-gradient-to-t from-[#2E2E2E]/20 to-transparent"></div>
+              <div class="absolute top-8 left-8 bg-[#4A90E2] text-white px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest">
+                Featured Article
+              </div>
+            </div>
+            
+            <div class="lg:w-1/2 p-12 flex flex-col justify-center">
+              <span class="text-[#4A90E2] font-black uppercase tracking-[0.4em] text-[10px] mb-6">{featuredPost.pubDate}</span>
+              <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-[#2E2E2E] mb-8 group-hover:text-[#4A90E2] transition-colors leading-[0.9]">
+                {featuredPost.title}
+              </h2>
+              <p class="text-[#2E2E2E]/70 text-lg leading-relaxed mb-10 line-clamp-3 font-light">
+                {featuredPost.description}
+              </p>
+              <div class="flex items-center gap-4 text-[#4A90E2] font-bold">
+                <span class="border-b-2 border-[#4A90E2]/20 group-hover:border-[#4A90E2] transition-all">Read full article</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      )}
+
+      {/* Posts Grid */}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {remainingPosts.map((post) => (
+          <a 
+            href={post.link} 
+            target="_blank"
+            class="group block p-8 rounded-[2.5rem] bg-white border border-[#E0E0E0] hover:border-[#4A90E2]/20 transition-all duration-500 shadow-sm hover:shadow-lg shadow-[#2E2E2E]/5"
+          >
+            <div class="aspect-video rounded-2xl overflow-hidden mb-8 bg-[#F4F4F4] relative">
+              {post.thumbnail ? (
+                <img 
+                  src={post.thumbnail} 
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-[#2E2E2E]/5 font-black text-2xl uppercase">
+                  Blog
+                </div>
+              )}
+            </div>
+            <span class="text-[#4A90E2] font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">{post.pubDate}</span>
+            <h3 class="text-2xl font-black tracking-tight text-[#2E2E2E] mb-4 line-clamp-2 leading-tight group-hover:text-[#4A90E2] transition-colors">
+              {post.title}
+            </h3>
+            <p class="text-[#2E2E2E]/60 text-sm leading-relaxed line-clamp-3 font-light">
+              {post.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  ) : (
+    <div class="py-32 text-center">
+      <div class="inline-block mb-8 opacity-20 transform -rotate-6">
+        <Tegaki text="Coming soon..." font={caveat} size={64} duration={3} client:load />
+      </div>
+      <h2 class="text-4xl font-black text-[#2E2E2E]/20 uppercase tracking-tighter">No articles found</h2>
+      <p class="text-[#2E2E2E]/40 mt-4">Articles are currently being drafted. Stay tuned!</p>
+    </div>
+  )}
+
+  {/* Newsletter CTA */}
+  <div class="mt-48 p-16 rounded-[4rem] bg-[#2E2E2E] text-white overflow-hidden relative">
+    <div class="absolute -right-20 -top-20 w-80 h-80 bg-[#4A90E2]/20 rounded-full blur-[100px]"></div>
+    <div class="relative z-10 max-w-2xl">
+      <h3 class="text-4xl md:text-6xl font-black tracking-tighter mb-6 leading-none">Stay in the <span class="text-[#4A90E2] italic font-serif">loop</span>.</h3>
+      <p class="text-white/60 text-lg mb-10 max-w-md">
+        Get an email whenever I publish new technical insights or case studies. No spam, just deep dives.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <input 
+          type="email" 
+          placeholder="your@email.com" 
+          class="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#4A90E2] transition-colors text-white"
+        />
+        <button class="bg-[#4A90E2] hover:bg-[#6C63FF] text-white px-10 py-4 rounded-2xl font-black uppercase tracking-widest text-sm transition-all hover:scale-105">
+          Join
+        </button>
+      </div>
+    </div>
+  </div>
+</Layout>

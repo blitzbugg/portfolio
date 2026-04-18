@@ -1,0 +1,11 @@
+---
+interface Props {
+  className?: string;
+  size?: string;
+  color?: string;
+}
+
+const { className = "", size = "w-64 h-64", color = "bg-primary/5" } = Astro.props;
+---
+
+<div class={`absolute blur-3xl rounded-full animate-morph pointer-events-none select-none ${size} ${color} ${className}`}></div>

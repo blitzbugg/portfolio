@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import TimelineItem from "../../components/TimelineItem.astro";
+import { education } from "../../data/info";
+---
+
+<Layout title="Education">
+  <SectionHeader title="Educational Background" subtitle="Learning" />
+  
+  <div class="mt-20 max-w-4xl">
+    {education.map((edu) => (
+      <TimelineItem 
+        title={edu.degree}
+        subtitle={edu.institution}
+        period={edu.period}
+        description={edu.description}
+      />
+    ))}
+  </div>
+
+  <div class="mt-20 flex flex-col items-center justify-center p-12 rounded-[2rem] border-2 border-dashed border-[#E0E0E0]">
+    <div class="w-12 h-12 rounded-full border border-[#4A90E2]/30 flex items-center justify-center mb-6 text-[#4A90E2]">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg>
+    </div>
+    <p class="text-xs font-black tracking-[0.4em] uppercase text-[#2E2E2E]/40">Continuous Learning</p>
+  </div>
+</Layout>
