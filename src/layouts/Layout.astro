@@ -29,11 +29,29 @@ const { title, description = "Ananthapadmanabhan M - Senior MERN Stack Developer
 		
 		<title>{title} | Ananthapadmanabhan M</title>
 
-		<!-- SEO -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<!-- Advanced SEO -->
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ananthapadmanabhan M" />
+		<link rel="canonical" href="https://blitzbugg.vercel.app/" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="theme-color" content="#F4F4F4" />
+
+		<!-- Open Graph / Facebook / WhatsApp -->
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://blitzbugg.vercel.app/" />
+		<meta property="og:title" content={`${title} | Ananthapadmanabhan M`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://blitzbugg.vercel.app/og-preview.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<!-- Twitter / X -->
 		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://blitzbugg.vercel.app/" />
+		<meta name="twitter:title" content={`${title} | Ananthapadmanabhan M`} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://blitzbugg.vercel.app/og-preview.png" />
+		<meta name="twitter:site" content="@blitzbugg" />
 	</head>
 	<body class="min-h-screen selection:bg-[#4A90E2] selection:text-white overflow-x-hidden w-full bg-[#F4F4F4]">
 		<Navbar />
