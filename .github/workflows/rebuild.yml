@@ -1,0 +1,13 @@
+name: Weekly Rebuild
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Runs at 00:00 every Monday
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
+
+jobs:
+  trigger-vercel-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run: |
+          curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK }}
