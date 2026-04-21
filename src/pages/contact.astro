@@ -1,0 +1,111 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Blob from "../components/Blob.astro";
+import { personalInfo } from "../data/info";
+
+const { socials } = personalInfo;
+const email = "ananthapadmanabhanm98@gmail.com";
+---
+
+<Layout title="Contact | Ananthapadmanabhan">
+	<section class="py-12 md:py-20 relative overflow-hidden px-4">
+		<Blob className="top-0 -left-20 opacity-30" size="w-72 h-72 sm:w-96 sm:h-96" color="bg-primary/10" />
+		<Blob className="bottom-20 -right-20 opacity-20" size="w-64 h-64 sm:w-80 sm:h-80" color="bg-secondary/10" />
+
+		<SectionHeader title="Let's build something together" subtitle="Contact" />
+
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 relative z-10">
+			<!-- Contact Info -->
+			<div class="space-y-8 animate-slide-up">
+				<p class="text-xl md:text-3xl text-foreground/70 leading-relaxed font-light">
+					Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
+				</p>
+
+				<div class="space-y-6 pt-8">
+					<a 
+						href={`mailto:${email}`}
+						class="group flex items-center justify-between p-8 rounded-[2rem] bg-white border border-border hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl shadow-foreground/5"
+					>
+						<div class="flex items-center gap-6">
+							<div class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+							</div>
+							<div class="flex flex-col">
+								<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-foreground/40 mb-1">Email Me</span>
+								<span class="text-lg md:text-xl font-bold text-foreground break-all">{email}</span>
+							</div>
+						</div>
+						<div class="w-10 h-10 rounded-full bg-background flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+						</div>
+					</a>
+
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+						<!-- Resume Card -->
+						<a 
+							href="/My_resume.pdf"
+							download
+							class="group p-8 rounded-[2rem] bg-white border border-border hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl shadow-foreground/5"
+						>
+							<div class="flex items-center justify-between mb-6">
+								<div class="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+									<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+								</div>
+								<div class="text-foreground/20 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+								</div>
+							</div>
+							<h4 class="text-xl font-bold text-foreground capitalize">My Resume</h4>
+						</a>
+
+						{Object.entries(socials).map(([platform, url]) => (
+							<a 
+								href={url}
+								target="_blank"
+								class="group p-8 rounded-[2rem] bg-white border border-border hover:border-secondary/30 transition-all duration-500 shadow-sm hover:shadow-xl shadow-foreground/5"
+							>
+								<div class="flex items-center justify-between mb-6">
+									<div class="w-12 h-12 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+										{platform === 'github' && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a4.8 4.8 0 0 0-1.5-3.5 4.8 4.8 0 0 0-1-3.5S15.8 2 13 4.5a15.4 15.4 0 0 0-8 0C2.2 2 1.2 2 1.2 2a4.8 4.8 0 0 0-1 3.5 4.8 4.8 0 0 0-1.5 3.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-5 1.5-5-2.5-7-3"/></svg>}
+										{platform === 'linkedin' && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>}
+										{platform === 'medium' && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/><path d="M20 4c2.209 0 4 3.582 4 8s-1.791 8-4 8-4-3.582-4-8 1.791-8 4-8z"/><path d="M24 12c0 3.866-.448 7-1 7s-1-3.134-1-7 .448-7 1-7 1 3.134 1 7z"/></svg>}
+									</div>
+									<div class="text-foreground/20 group-hover:text-secondary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+									</div>
+								</div>
+								<h4 class="text-xl font-bold text-foreground capitalize">{platform}</h4>
+							</a>
+						))}
+					</div>
+				</div>
+			</div>
+
+			<!-- Creative Element -->
+			<div class="lg:pl-12 flex items-center justify-center animate-slide-up" style="animation-delay: 0.2s;">
+				<div class="relative w-full aspect-square max-w-md">
+					<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/10 to-transparent rounded-[3rem] animate-morph"></div>
+					<div class="absolute inset-8 bg-white/40 backdrop-blur-3xl rounded-[2.5rem] border border-white/50 shadow-2xl flex items-center justify-center p-12 text-center overflow-hidden group">
+						<div class="relative z-10">
+							<div class="font-caveat text-4xl text-primary mb-6 rotate-[-2deg] group-hover:rotate-0 transition-transform">
+								Quick Note
+							</div>
+							<p class="text-xl font-light text-foreground/80 leading-relaxed italic">
+								"I'm generally quick to respond. Let's create something meaningful together!"
+							</p>
+						</div>
+						<!-- Decorative circles -->
+						<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+						<div class="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-32 text-center max-w-2xl mx-auto opacity-50">
+			<div class="w-px h-24 bg-gradient-to-b from-primary to-transparent mx-auto mb-10"></div>
+			<p class="text-sm font-bold uppercase tracking-[0.5em] text-primary">Based in Kerala, India (IST)</p>
+		</div>
+	</section>
+</Layout>

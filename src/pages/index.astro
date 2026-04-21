@@ -46,22 +46,26 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 				Building digital products that feel <span class="text-primary font-medium relative italic text-xl md:text-3xl">human</span>. I'm a developer who crafts <span class="text-foreground font-medium underline decoration-secondary/40 underline-offset-8 decoration-2 md:decoration-4">experiences</span>, not just code.
 			</p>
 
-			<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 animate-slide-up" style="animation-delay: 0.2s;">
-				<a href="/projects" class="w-full sm:w-auto text-center group relative px-8 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-[#2E2E2E] text-white font-black text-xs sm:text-lg transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-[#2E2E2E]/20 overflow-hidden uppercase tracking-[0.2em]">
+			<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 animate-slide-up" style="animation-delay: 0.2s;">
+				<a href="/projects" class="w-full sm:w-auto text-center group relative px-8 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-foreground text-white font-black text-xs sm:text-lg transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-foreground/20 overflow-hidden uppercase tracking-[0.2em]">
 					<span class="relative z-10">Explore Work</span>
-					<div class="absolute inset-0 bg-[#4A90E2] opacity-0 group-hover:opacity-20 transition-opacity"></div>
+					<div class="absolute inset-0 bg-primary opacity-0 group-hover:opacity-20 transition-opacity"></div>
 				</a>
-				<a href="https://github.com/blitzbugg" class="text-[#2E2E2E] font-bold text-lg flex items-center gap-4 hover:text-[#4A90E2] transition-all group px-2">
-					<span class="border-b-2 border-[#E0E0E0] group-hover:border-[#4A90E2] text-sm sm:text-lg">GitHub</span>
+				<a href="/My_resume.pdf" download class="w-full sm:w-auto text-center group relative px-8 py-4 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-white border-2 border-foreground text-foreground font-black text-xs sm:text-lg transition-all hover:scale-105 active:scale-95 shadow-xl shadow-foreground/5 overflow-hidden uppercase tracking-[0.2em]">
+					<span class="relative z-10">Download CV</span>
+					<div class="absolute inset-0 bg-foreground opacity-0 group-hover:opacity-5 transition-opacity"></div>
+				</a>
+				<a href="https://github.com/blitzbugg" target="_blank" class="text-foreground font-bold text-lg flex items-center gap-4 hover:text-primary transition-all group px-2">
+					<span class="border-b-2 border-border group-hover:border-primary text-sm sm:text-lg">GitHub</span>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:rotate-12 transition-transform scale-75 sm:scale-100"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
 				</a>
 			</div>
 		</div>
 
 		<!-- Scroll Link (Desktop Only) -->
-		<div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-6 opacity-40 animate-float text-[#4A90E2]">
+		<div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-6 opacity-40 animate-float text-primary">
 			<span class="text-[10px] uppercase tracking-[0.5em] font-bold">Scroll to Explore</span>
-			<div class="w-px h-16 bg-gradient-to-b from-[#4A90E2] to-transparent"></div>
+			<div class="w-px h-16 bg-gradient-to-b from-primary to-transparent"></div>
 		</div>
 	</section>
 
