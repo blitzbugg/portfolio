@@ -97,6 +97,35 @@ const { title, description = "Ananthapadmanabhan M - Portfolio" } = Astro.props;
 				<a href="https://medium.com/@blitzbugg" class="text-foreground/60 hover:text-primary transition-colors">Medium</a>
 			</div>
 		</footer>
+
+		<script is:inline>
+			const initReveal = () => {
+				const observerOptions = {
+					root: null,
+					threshold: 0.1,
+					rootMargin: '0px'
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('active');
+							// Optional: stop observing once revealed
+							// observer.unobserve(entry.target);
+						}
+					});
+				}, observerOptions);
+
+				const revealElements = document.querySelectorAll('[class*="reveal"]');
+				revealElements.forEach((el) => observer.observe(el));
+			};
+
+			// Run on initial load
+			initReveal();
+
+			// Run on every view transition (navigation)
+			document.addEventListener('astro:after-swap', initReveal);
+		</script>
 	</body>
 </html>
 

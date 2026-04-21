@@ -70,12 +70,12 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 	</section>
 
 	<!-- Highlights Section -->
-	<section class="mb-32 sm:mb-48 relative">
+	<section class="mb-32 sm:mb-48 relative reveal">
 		<SectionHeader title="The Work" subtitle="Selected" />
 		
 		<div class="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-16 mt-12 sm:mt-20">
 			<!-- Large Project -->
-			<div class="md:col-span-8 group">
+			<div class="md:col-span-8 group reveal-left">
 				<div class="relative overflow-hidden rounded-[2rem] sm:rounded-[3rem] bg-white border border-[#E0E0E0] p-1 shadow-xl shadow-[#2E2E2E]/5">
 					<ProjectCard {...projects[0]} />
 					<div class="absolute top-40 right-10 text-[#5249FF] rotate-12 drop-shadow-md hidden md:block font-caveat text-4xl">
@@ -85,17 +85,17 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 			</div>
 
 			<!-- Smaller Project -->
-			<div class="md:col-span-6 md:mt-48">
+			<div class="md:col-span-6 md:mt-48 reveal-right">
 				<ProjectCard {...projects[1]} />
 			</div>
 
 			<!-- Third Project -->
-			<div class="md:col-span-6 md:-mt-24">
+			<div class="md:col-span-6 md:-mt-24 reveal-left">
 				<ProjectCard {...projects[2]} />
 			</div>
 
 			<!-- Custom Note -->
-			<div class="md:col-span-12 flex items-center justify-center mt-12 sm:mt-0">
+			<div class="md:col-span-12 flex items-center justify-center mt-12 sm:mt-0 reveal-scale">
 				<div class="max-w-md text-center p-8 sm:p-12 handwritten text-2xl sm:text-4xl text-[#2D74C7] -rotate-2 drop-shadow-md bg-white rounded-[2rem] sm:rounded-[3rem] border border-[#E0E0E0] shadow-sm">
 					"I believe every pixel should serve a purpose and every interaction should bring a smile."
 				</div>
@@ -104,17 +104,18 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 	</section>
 
 	<!-- About Me -->
-	<section class="mb-32 sm:mb-48 relative px-2 sm:px-0">
+	<section class="mb-32 sm:mb-48 relative px-2 sm:px-0 reveal">
 		<Blob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" size="w-[700px] h-[700px]" color="bg-primary/10" />
 		
 		<div class="max-w-5xl mx-auto backdrop-blur-3xl p-6 sm:p-12 md:p-24 rounded-[3rem] sm:rounded-[5rem] bg-white/60 border border-[#E0E0E0] relative z-10 shadow-3xl shadow-[#2E2E2E]/5">
 			<div class="flex flex-col lg:flex-row gap-12 sm:gap-20 items-center">
-				<div class="relative shrink-0">
+				<div class="relative shrink-0 reveal-left">
 					<div class="w-44 h-44 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-[3rem] sm:rounded-[4rem] bg-white border border-[#E0E0E0] overflow-hidden relative group shadow-lg">
 						<img 
 							src="https://avatars.githubusercontent.com/u/112957222?v=4" 
 							alt={name} 
 							class="w-full h-full object-cover bg-[#F4F4F4]"
+							loading="lazy"
 						/>
 						<div class="absolute inset-4 sm:inset-6 rounded-full border-2 border-dashed border-[#4A90E2]/20 pointer-events-none"></div>
 						<div class="absolute inset-8 sm:inset-12 rounded-full border border-[#E0E0E0]/30 pointer-events-none"></div>
@@ -124,7 +125,7 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 					</div>
 				</div>
 
-				<div class="flex-1 text-center lg:text-left">
+				<div class="flex-1 text-center lg:text-left reveal-right">
 					<div class="text-primary font-black uppercase tracking-[0.5em] text-[8px] sm:text-xs mb-4 sm:mb-6 px-1">Professional Journey</div>
 					<h2 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-10 leading-none">Crafting since <span class="italic font-serif text-primary">2022</span>.</h2>
 					<p class="text-base sm:text-xl md:text-2xl text-[#2E2E2E]/70 leading-relaxed mb-10 sm:mb-16 font-light">
@@ -159,7 +160,7 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 					>
 						<div class="aspect-video rounded-xl overflow-hidden mb-6 bg-[#F4F4F4] relative">
 							{post.thumbnail ? (
-								<img src={post.thumbnail} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+								<img src={post.thumbnail} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
 							) : (
 								<div class="w-full h-full flex items-center justify-center text-[#2E2E2E]/5 font-black">Blog</div>
 							)}

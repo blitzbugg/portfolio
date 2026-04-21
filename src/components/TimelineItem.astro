@@ -10,7 +10,7 @@ interface Props {
 const { title, subtitle, period, description, className = "" } = Astro.props;
 ---
 
-<div class={`relative pl-10 pb-16 border-l border-border last:border-0 ${className}`}>
+<div class={`relative pl-10 pb-16 border-l border-border last:border-0 reveal-left ${className}`}>
   <div class="absolute left-[-6px] top-0 w-[12px] h-[12px] rounded-full bg-primary shadow-[0_0_20px_rgba(45,116,199,0.3)] border-2 border-background"></div>
   
   <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
