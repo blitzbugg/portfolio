@@ -1,6 +1,4 @@
 ---
-import Tegaki from "tegaki/astro";
-import caveat from "tegaki/fonts/caveat";
 
 interface Props {
   title: string;
@@ -15,21 +13,24 @@ const { title, subtitle, className = "" } = Astro.props;
   <!-- Content Layer -->
   <div class="relative z-10 flex flex-col gap-2 sm:gap-3">
     <div class="flex items-center gap-3 translate-x-1">
-      <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.5em] text-[#4A90E2] font-bold">{subtitle || "Explore"}</span>
+      <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.5em] text-primary font-bold">{subtitle || "Explore"}</span>
       <div class="h-[1px] w-8 sm:w-12 bg-[#2E2E2E]/10"></div>
     </div>
     
     <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-      <h2 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] max-w-3xl text-[#2E2E2E] drop-shadow-sm">{title}</h2>
+      <h2 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] max-w-3xl text-foreground drop-shadow-sm">{title}</h2>
       {subtitle && (
-        <div class="hidden md:block opacity-40 transform -rotate-3 mt-6 shrink-0 text-[#6C63FF]">
-          <Tegaki 
-            text={subtitle === "Projects" ? "Check 'em out" : subtitle === "Journey" ? "My path" : "Hand-crafted"} 
-            font={caveat} 
-            size={20}
-            duration={2}
-            client:load
-          />
+        <div class="hidden md:block opacity-80 transform -rotate-3 mt-6 shrink-0 text-secondary font-caveat text-4xl">
+          {
+            subtitle === "Projects" || subtitle === "Builds" ? "Some of my best works" :
+            subtitle === "Journey" ? "Professional Growth" :
+            subtitle === "Selected" ? "Portfolio Highlights" :
+            subtitle === "Blogs" ? "Stories & Ideas" :
+            subtitle === "Learning" ? "Academic Roots" :
+            subtitle === "Milestones" ? "Recognition & Awards" :
+            subtitle === "Skills" ? "Modern Toolkit" :
+            "Crafted with Intent"
+          } 
         </div>
       )}
     </div>

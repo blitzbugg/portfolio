@@ -23,7 +23,7 @@ const { title, description = "Ananthapadmanabhan M - Portfolio" } = Astro.props;
 		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Gochi+Hand&family=Caveat:wght@400;700&family=Italianno&display=swap" rel="stylesheet">
 		
 		<ClientRouter />
 		
@@ -79,22 +79,22 @@ const { title, description = "Ananthapadmanabhan M - Portfolio" } = Astro.props;
 			}
 		</script>
 	</head>
-	<body class="min-h-screen selection:bg-[#4A90E2] selection:text-white overflow-x-hidden w-full bg-[#F4F4F4]">
+	<body class="min-h-screen selection:bg-primary selection:text-white overflow-x-hidden w-full bg-background">
 		<Navbar />
 		<main class="max-w-6xl mx-auto px-6 pt-8 md:pt-32 pb-32 md:pb-20 overflow-x-hidden">
 			<slot />
 		</main>
 		
-		<footer class="max-w-6xl mx-auto px-6 py-20 border-t border-[#E0E0E0] text-[#2E2E2E]/40 text-sm flex flex-col md:flex-row justify-between items-center gap-8">
+		<footer class="max-w-6xl mx-auto px-6 py-20 border-t border-border text-foreground/40 text-sm flex flex-col md:flex-row justify-between items-center gap-8">
 			<div class="flex items-center gap-6">
-				<div class="text-2xl font-black tracking-tighter text-[#2E2E2E]">AM<span class="text-[#4A90E2]">.</span></div>
-				<div class="h-6 w-[1px] bg-[#E0E0E0] hidden md:block"></div>
+				<div class="text-2xl font-black tracking-tighter text-foreground">AM<span class="text-primary">.</span></div>
+				<div class="h-6 w-[1px] bg-border hidden md:block"></div>
 				<p class="font-medium">© 2026 Ananthapadmanabhan M. <span class="hidden md:inline">Built with passion & precision.</span></p>
 			</div>
 			<div class="flex gap-10 font-bold uppercase tracking-widest text-[10px]">
-				<a href="https://github.com/blitzbugg" class="text-[#2E2E2E]/60 hover:text-[#4A90E2] transition-colors">GitHub</a>
-				<a href="https://www.linkedin.com/in/ananthapadmanabhan-m/" class="text-[#2E2E2E]/60 hover:text-[#4A90E2] transition-colors">LinkedIn</a>
-				<a href="https://medium.com/@blitzbugg" class="text-[#2E2E2E]/60 hover:text-[#4A90E2] transition-colors">Medium</a>
+				<a href="https://github.com/blitzbugg" class="text-foreground/60 hover:text-primary transition-colors">GitHub</a>
+				<a href="https://www.linkedin.com/in/ananthapadmanabhan-m/" class="text-foreground/60 hover:text-primary transition-colors">LinkedIn</a>
+				<a href="https://medium.com/@blitzbugg" class="text-foreground/60 hover:text-primary transition-colors">Medium</a>
 			</div>
 		</footer>
 	</body>

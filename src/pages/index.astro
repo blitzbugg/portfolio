@@ -3,9 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Blob from "../components/Blob.astro";
-import Tegaki from "tegaki/astro";
-import caveat from "tegaki/fonts/caveat";
-import italianno from "tegaki/fonts/italianno";
 import { personalInfo, projects } from "../data/info";
 import { getMediumPosts } from "../lib/medium";
 
@@ -16,15 +13,15 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 <Layout title="Home">
 	<!-- Hero Section -->
 	<section class="py-12 md:py-0 md:min-h-[80vh] flex flex-col justify-center relative overflow-hidden mb-8 sm:mb-32 px-4 sm:px-0">
-		<Blob className="top-0 -left-20 opacity-30" size="w-72 h-72 sm:w-96 sm:h-96" color="bg-[#4A90E2]/10" />
-		<Blob className="bottom-20 -right-20 opacity-20" size="w-64 h-64 sm:w-80 sm:h-80" color="bg-[#6C63FF]/10" />
+		<Blob className="top-0 -left-20 opacity-30" size="w-72 h-72 sm:w-96 sm:h-96" color="bg-primary/10" />
+		<Blob className="bottom-20 -right-20 opacity-20" size="w-64 h-64 sm:w-80 sm:h-80" color="bg-secondary/10" />
 
 		<div class="relative z-10 w-full px-2 sm:px-0">
 			<div class="mb-4 sm:mb-8 flex items-center gap-4 animate-fade-in">
-				<span class="px-5 py-2 rounded-xl bg-white border border-[#E0E0E0] text-[8px] sm:text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#4A90E2] shadow-sm">
+				<span class="px-5 py-2 rounded-xl bg-white border border-border text-[8px] sm:text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-primary shadow-sm">
 					Building Scalable Solutions
 				</span>
-				<div class="h-px w-10 sm:w-16 bg-[#4A90E2]/30"></div>
+				<div class="h-px w-10 sm:w-16 bg-primary/30"></div>
 			</div>
 			
 			<div class="mb-10 sm:mb-12 max-w-full">
@@ -32,24 +29,21 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 				<h1 class="text-[4.8vw] xs:text-4xl sm:text-8xl md:text-7xl lg:text-[6.5rem] font-black tracking-[-0.06em] mb-4 sm:mb-6 leading-[0.85] overflow-visible">
 					<div class="relative inline-block max-w-full">
 						<span class="text-[#2E2E2E] drop-shadow-sm whitespace-nowrap inline-block">{name}</span>
-						<div class="absolute -bottom-4 -right-2 sm:-bottom-8 sm:right-0 md:-right-12 text-[10px] sm:text-xl md:text-5xl text-[#4A90E2] opacity-90 transform rotate-6 drop-shadow-sm">
-							<Tegaki text="aka Ananthu" font={caveat} size={16} duration={1.5} client:load />
+						<div class="absolute -bottom-4 -right-2 sm:-bottom-8 sm:right-0 md:-right-12 text-[10px] sm:text-2xl md:text-5xl text-[#2D74C7] transform rotate-6 drop-shadow-md font-caveat">
+							Ananthu
 						</div>
 					</div>
 				</h1>
 				
 				<div class="flex flex-col md:flex-row md:items-end gap-2 md:gap-10 mt-8 md:mt-10">
-					<h2 class="text-xl sm:text-3xl md:text-6xl font-light tracking-tight text-[#2E2E2E]/40 leading-tight">
-						{role} <span class="italic font-serif text-[#4A90E2]">&</span> <span class="text-[#2E2E2E]">Designer</span>
+					<h2 class="text-xl sm:text-3xl md:text-6xl font-light tracking-tight text-foreground/40 leading-tight">
+						{role} <span class="italic font-serif text-primary">&</span> <span class="text-foreground">Designer</span>
 					</h2>
-					<div class="pb-2 hidden lg:block shrink-0 text-[#6C63FF] opacity-60">
-						<Tegaki text="Crafting digital magic" font={italianno} size={32} duration={2.5} client:load />
-					</div>
 				</div>
 			</div>
 
-			<p class="text-lg sm:text-xl md:text-3xl text-[#2E2E2E]/70 max-w-3xl leading-relaxed mb-12 sm:mb-16 animate-slide-up font-light">
-				Building digital products that feel <span class="text-[#4A90E2] font-medium relative italic text-xl md:text-3xl">human</span>. I'm a developer who crafts <span class="text-[#2E2E2E] font-medium underline decoration-[#6C63FF]/40 underline-offset-8 decoration-2 md:decoration-4">experiences</span>, not just code.
+			<p class="text-lg sm:text-xl md:text-3xl text-foreground/70 max-w-3xl leading-relaxed mb-12 sm:mb-16 animate-slide-up font-light">
+				Building digital products that feel <span class="text-primary font-medium relative italic text-xl md:text-3xl">human</span>. I'm a developer who crafts <span class="text-foreground font-medium underline decoration-secondary/40 underline-offset-8 decoration-2 md:decoration-4">experiences</span>, not just code.
 			</p>
 
 			<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10 animate-slide-up" style="animation-delay: 0.2s;">
@@ -80,8 +74,8 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 			<div class="md:col-span-8 group">
 				<div class="relative overflow-hidden rounded-[2rem] sm:rounded-[3rem] bg-white border border-[#E0E0E0] p-1 shadow-xl shadow-[#2E2E2E]/5">
 					<ProjectCard {...projects[0]} />
-					<div class="absolute top-10 right-10 text-[#6C63FF] rotate-12 drop-shadow-sm hidden md:block">
-						<Tegaki text="Epic Project!" font={caveat} size={28} duration={1} client:visible />
+					<div class="absolute top-40 right-10 text-[#5249FF] rotate-12 drop-shadow-md hidden md:block font-caveat text-4xl">
+						Epic Project!
 					</div>
 				</div>
 			</div>
@@ -98,7 +92,7 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 
 			<!-- Custom Note -->
 			<div class="md:col-span-12 flex items-center justify-center mt-12 sm:mt-0">
-				<div class="max-w-md text-center p-8 sm:p-12 handwritten text-2xl sm:text-4xl text-[#4A90E2] -rotate-2 drop-shadow-sm bg-white rounded-[2rem] sm:rounded-[3rem] border border-[#E0E0E0] shadow-sm">
+				<div class="max-w-md text-center p-8 sm:p-12 handwritten text-2xl sm:text-4xl text-[#2D74C7] -rotate-2 drop-shadow-md bg-white rounded-[2rem] sm:rounded-[3rem] border border-[#E0E0E0] shadow-sm">
 					"I believe every pixel should serve a purpose and every interaction should bring a smile."
 				</div>
 			</div>
@@ -107,7 +101,7 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 
 	<!-- About Me -->
 	<section class="mb-32 sm:mb-48 relative px-2 sm:px-0">
-		<Blob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" size="w-[700px] h-[700px]" color="bg-[#4A90E2]/10" />
+		<Blob className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20" size="w-[700px] h-[700px]" color="bg-primary/10" />
 		
 		<div class="max-w-5xl mx-auto backdrop-blur-3xl p-6 sm:p-12 md:p-24 rounded-[3rem] sm:rounded-[5rem] bg-white/60 border border-[#E0E0E0] relative z-10 shadow-3xl shadow-[#2E2E2E]/5">
 			<div class="flex flex-col lg:flex-row gap-12 sm:gap-20 items-center">
@@ -127,8 +121,8 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 				</div>
 
 				<div class="flex-1 text-center lg:text-left">
-					<div class="text-[#4A90E2] font-black uppercase tracking-[0.5em] text-[8px] sm:text-xs mb-4 sm:mb-6 px-1">Professional Journey</div>
-					<h2 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-10 leading-none">Crafting since <span class="italic font-serif text-[#4A90E2]">2022</span>.</h2>
+					<div class="text-primary font-black uppercase tracking-[0.5em] text-[8px] sm:text-xs mb-4 sm:mb-6 px-1">Professional Journey</div>
+					<h2 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 sm:mb-10 leading-none">Crafting since <span class="italic font-serif text-primary">2022</span>.</h2>
 					<p class="text-base sm:text-xl md:text-2xl text-[#2E2E2E]/70 leading-relaxed mb-10 sm:mb-16 font-light">
 						{summary}
 					</p>
@@ -192,8 +186,8 @@ const latestPosts = (await getMediumPosts()).slice(0, 3);
 	<!-- CTA -->
 	<section class="py-24 sm:py-32 text-center relative overflow-hidden px-4 z-10">
 		<Blob className="-bottom-20 left-1/2 -translate-x-1/2 opacity-20" size="w-[500px] h-[500px]" color="bg-[#4A90E2]/10" />
-		<div class="mb-8 sm:mb-12 relative z-10 text-[#4A90E2] pointer-events-none">
-			<Tegaki text="Let's build something future-proof" font={caveat} size={32} duration={3} client:visible />
+		<div class="mb-8 sm:mb-12 relative z-10 text-primary pointer-events-none font-caveat text-4xl sm:text-5xl">
+			Let's build something future-proof
 		</div>
 		<h2 class="text-4xl sm:text-7xl md:text-9xl font-bold tracking-tighter mb-12 sm:mb-16 relative z-10 text-[#2E2E2E] leading-none pointer-events-none">Get in <span class="italic font-serif text-[#6C63FF] underline decoration-[#6C63FF] decoration-2 sm:decoration-4 underline-offset-8 sm:underline-offset-16">touch</span>.</h2>
 		<a 

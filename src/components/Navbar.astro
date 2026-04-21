@@ -14,9 +14,9 @@ const pathname = new URL(Astro.request.url).pathname;
 
 <!-- Desktop Navbar -->
 <nav class="fixed top-6 left-0 right-0 z-50 px-6 hidden md:block">
-	<div class="max-w-4xl mx-auto glass rounded-2xl py-3 px-6 flex items-center justify-between border border-[#E0E0E0] shadow-xl shadow-[#2E2E2E]/5">
-		<a href="/" class="text-xl font-bold tracking-tighter text-[#2E2E2E] hover:text-[#4A90E2] transition-colors">
-			AM<span class="text-[#4A90E2]">.</span>
+	<div class="max-w-4xl mx-auto glass rounded-2xl py-3 px-6 flex items-center justify-between border border-border shadow-xl shadow-foreground/5">
+		<a href="/" class="text-xl font-bold tracking-tighter text-foreground hover:text-primary transition-colors">
+			AM<span class="text-primary">.</span>
 		</a>
 		
 		<ul class="flex items-center gap-2">
@@ -28,8 +28,8 @@ const pathname = new URL(Astro.request.url).pathname;
 							href={item.href}
 							class={`px-4 py-2 rounded-xl text-sm font-bold uppercase tracking-widest transition-all duration-300 ${
 								isActive 
-									? "bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20" 
-									: "text-[#2E2E2E]/60 hover:text-[#2E2E2E] hover:bg-[#2E2E2E]/5"
+									? "bg-primary text-white shadow-lg shadow-primary/20" 
+									: "text-foreground/60 hover:text-foreground hover:bg-foreground/5"
 							}`}
 						>
 							{item.name}
@@ -43,8 +43,8 @@ const pathname = new URL(Astro.request.url).pathname;
 
 <!-- Mobile Navbar (Bottom Docked) -->
 <nav class="fixed bottom-8 left-4 right-4 z-50 md:hidden">
-	<div class="glass rounded-[2rem] py-2.5 px-3 flex items-center justify-between border border-[#E0E0E0] shadow-2xl shadow-[#2E2E2E]/15">
-		<a href="/" class="p-2.5 text-lg font-black text-[#2E2E2E]">AM<span class="text-[#4A90E2]">.</span></a>
+	<div class="glass rounded-[2rem] py-2.5 px-3 flex items-center justify-between border border-border shadow-2xl shadow-foreground/15">
+		<a href="/" class="p-2.5 text-lg font-black text-foreground">AM<span class="text-primary">.</span></a>
 		
 		<div class="flex-1 flex overflow-x-auto no-scrollbar gap-1.5 px-2 scroll-smooth">
 			{navItems.map((item) => {
@@ -54,8 +54,8 @@ const pathname = new URL(Astro.request.url).pathname;
 						href={item.href}
 						class={`whitespace-nowrap px-4 py-2.5 rounded-[1.25rem] text-[9px] font-black uppercase tracking-widest transition-all ${
 							isActive 
-								? "bg-[#2E2E2E] text-white shadow-lg scale-105" 
-								: "text-[#2E2E2E]/50 hover:text-[#2E2E2E] bg-black/5"
+								? "bg-foreground text-white shadow-lg scale-105" 
+								: "text-foreground/50 hover:text-foreground bg-black/5"
 						}`}
 					>
 						{item.name}

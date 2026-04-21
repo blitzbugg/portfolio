@@ -2,8 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import { getMediumPosts } from "../../lib/medium";
-import Tegaki from "tegaki/astro";
-import caveat from "tegaki/fonts/caveat";
 
 // Fetch posts at build time (SSG)
 const posts = await getMediumPosts();
@@ -14,8 +12,8 @@ const remainingPosts = posts.slice(1);
 <Layout title="Blogs | Ananthapadmanabhan">
   <SectionHeader title="Published Articles" subtitle="Blogs" />
 
-  <p class="text-xl text-[#2E2E2E]/60 mb-16 max-w-2xl leading-relaxed">
-    Sharing insights on MERN stack development, production systems, and design philosophy.
+  <p class="text-xl text-foreground/60 mb-16 max-w-2xl leading-relaxed">
+    Sharing stories, thoughts, and lessons learned through life, design, and code.
   </p>
 
   {posts.length > 0 ? (
@@ -47,15 +45,15 @@ const remainingPosts = posts.slice(1);
             </div>
             
             <div class="lg:w-1/2 p-12 flex flex-col justify-center">
-              <span class="text-[#4A90E2] font-black uppercase tracking-[0.4em] text-[10px] mb-6">{featuredPost.pubDate}</span>
-              <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-[#2E2E2E] mb-8 group-hover:text-[#4A90E2] transition-colors leading-[0.9]">
+              <span class="text-primary font-black uppercase tracking-[0.4em] text-[10px] mb-6">{featuredPost.pubDate}</span>
+              <h2 class="text-4xl md:text-6xl font-black tracking-tighter text-[#2E2E2E] mb-8 group-hover:text-primary transition-colors leading-[0.9]">
                 {featuredPost.title}
               </h2>
               <p class="text-[#2E2E2E]/70 text-lg leading-relaxed mb-10 line-clamp-3 font-light">
                 {featuredPost.description}
               </p>
-              <div class="flex items-center gap-4 text-[#4A90E2] font-bold">
-                <span class="border-b-2 border-[#4A90E2]/20 group-hover:border-[#4A90E2] transition-all">Read full article</span>
+              <div class="flex items-center gap-4 text-primary font-bold">
+                <span class="border-b-2 border-primary/20 group-hover:border-primary transition-all">Read full article</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </div>
             </div>
@@ -84,8 +82,8 @@ const remainingPosts = posts.slice(1);
                 </div>
               )}
             </div>
-            <span class="text-[#4A90E2] font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">{post.pubDate}</span>
-            <h3 class="text-2xl font-black tracking-tight text-[#2E2E2E] mb-4 line-clamp-2 leading-tight group-hover:text-[#4A90E2] transition-colors">
+            <span class="text-primary font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">{post.pubDate}</span>
+            <h3 class="text-2xl font-black tracking-tight text-[#2E2E2E] mb-4 line-clamp-2 leading-tight group-hover:text-primary transition-colors">
               {post.title}
             </h3>
             <p class="text-[#2E2E2E]/60 text-sm leading-relaxed line-clamp-3 font-light">
@@ -97,8 +95,8 @@ const remainingPosts = posts.slice(1);
     </div>
   ) : (
     <div class="py-32 text-center">
-      <div class="inline-block mb-8 opacity-20 transform -rotate-6">
-        <Tegaki text="Coming soon..." font={caveat} size={64} duration={3} client:load />
+      <div class="inline-block mb-8 opacity-60 transform -rotate-6 text-primary font-caveat text-7xl">
+        Coming soon...
       </div>
       <h2 class="text-4xl font-black text-[#2E2E2E]/20 uppercase tracking-tighter">No articles found</h2>
       <p class="text-[#2E2E2E]/40 mt-4">Articles are currently being drafted. Stay tuned!</p>
@@ -111,7 +109,7 @@ const remainingPosts = posts.slice(1);
     <div class="relative z-10 max-w-2xl">
       <h3 class="text-4xl md:text-6xl font-black tracking-tighter mb-6 leading-none">Stay in the <span class="text-[#4A90E2] italic font-serif">loop</span>.</h3>
       <p class="text-white/60 text-lg mb-10 max-w-md">
-        Get an email whenever I publish new technical insights or case studies. No spam, just deep dives.
+        Get an email whenever I publish new stories or insights. No spam, just pure thoughts delivered to your inbox.
       </p>
       <div class="flex flex-col sm:flex-row gap-4">
         <input 

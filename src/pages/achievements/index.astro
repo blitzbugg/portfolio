@@ -9,13 +9,13 @@ import { achievements } from "../../data/info";
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
     {achievements.map((achievement) => (
-      <div class="p-10 rounded-[2.5rem] bg-white border border-[#E0E0E0] hover:border-[#4A90E2]/20 transition-all group shadow-sm hover:shadow-xl shadow-[#2E2E2E]/5">
-        <div class="w-14 h-14 rounded-2xl bg-[#F4F4F4] border border-[#E0E0E0] flex items-center justify-center mb-8 group-hover:bg-[#4A90E2] group-hover:text-white transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:text-white text-[#4A90E2]"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+      <div class="p-10 rounded-[2.5rem] bg-white border border-border hover:border-primary/20 transition-all group shadow-sm hover:shadow-xl shadow-foreground/5">
+        <div class="w-14 h-14 rounded-2xl bg-background border border-border flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:text-white text-primary"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
         </div>
-        <h3 class="text-2xl font-black mb-2 text-[#2E2E2E]">{achievement.title}</h3>
-        <p class="text-[#4A90E2] font-black uppercase tracking-widest text-[10px] mb-6">{achievement.issuer} • {achievement.date}</p>
-        <p class="text-[#2E2E2E]/70 leading-relaxed font-light">
+        <h3 class="text-2xl font-black mb-2 text-foreground">{achievement.title}</h3>
+        <p class="text-primary font-black uppercase tracking-widest text-[10px] mb-6">{achievement.issuer} • {achievement.date}</p>
+        <p class="text-foreground/70 leading-relaxed font-light">
           {achievement.description}
         </p>
       </div>
