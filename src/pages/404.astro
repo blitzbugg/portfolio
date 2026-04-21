@@ -1,0 +1,368 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404">
+  <style>
+    /* ============================================
+       CUSTOM CSS FOR PREMIUM 404 PAGE
+       ============================================ */
+
+    /* Root color palette variables */
+    :root {
+      --bg-main: #F4F4F4;
+      --text-primary: #2E2E2E;
+      --brand-blue: #2D74C7;
+      --secondary-purple: #5249FF;
+      --accent-coral: #FF6B6B;
+      --muted-grey: #E0E0E0;
+      --active-blue: #4A90E2;
+    }
+
+    /* Blueprint grid background pattern */
+    .blueprint-bg {
+      background-color: var(--bg-main);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blueprint-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(
+          rgba(46, 46, 46, 0.03) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(46, 46, 46, 0.03) 1px,
+          transparent 1px
+        );
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Container for main content */
+    .container-404 {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    /* Hero 404 display */
+    .hero-404 {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(6rem, 20vw, 18rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text-primary);
+      text-align: center;
+      position: relative;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.1em;
+    }
+
+    /* Morphing "0" element */
+    .morphing-zero {
+      display: inline-block;
+      position: relative;
+      width: 1.15em;
+      height: 1.15em;
+      background: linear-gradient(135deg, var(--brand-blue), var(--secondary-purple));
+      border-radius: 50%;
+      animation: morphing 6s ease-in-out infinite;
+    }
+
+    @keyframes morphing {
+      0% {
+        border-radius: 50%;
+        transform: scaleX(1) scaleY(1);
+      }
+      25% {
+        border-radius: 60% 40% 50% 50%;
+        transform: scaleX(1.05) scaleY(0.98);
+      }
+      50% {
+        border-radius: 50%;
+        transform: scaleX(0.95) scaleY(1.05);
+      }
+      75% {
+        border-radius: 40% 60% 50% 50%;
+        transform: scaleX(1.03) scaleY(0.99);
+      }
+      100% {
+        border-radius: 50%;
+        transform: scaleX(1) scaleY(1);
+      }
+    }
+
+    /* Floating animation for secondary elements */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Subheading with premium typography */
+    .subheading-404 {
+      font-family: 'Crimson Text', serif;
+      font-size: clamp(1.25rem, 4vw, 1.875rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      max-width: 28rem;
+      line-height: 1.4;
+    }
+
+    /* Descriptive text */
+    .description-404 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #6B6B6B;
+      text-align: center;
+      max-width: 32rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    /* Handwritten annotation with caveat font */
+    .annotation {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5rem;
+      color: var(--accent-coral);
+      position: absolute;
+      transform: rotate(-12deg);
+      top: 55%;
+      right: 8%;
+      z-index: 10;
+      animation: float 3.5s ease-in-out infinite;
+      animation-delay: 0.2s;
+    }
+
+    @media (max-width: 768px) {
+      .annotation {
+        display: none;
+      }
+    }
+
+    /* CTA Button */
+    .btn-404 {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2.25rem;
+      gap: 0.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: white;
+      background: linear-gradient(135deg, var(--brand-blue), var(--active-blue));
+      border: none;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-404::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--active-blue), var(--secondary-purple));
+      transition: left 0.35s ease;
+      z-index: -1;
+    }
+
+    .btn-404:hover::before {
+      left: 0;
+    }
+
+    .btn-404:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(45, 116, 199, 0.3);
+    }
+
+    .btn-404:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 8px rgba(45, 116, 199, 0.2);
+    }
+
+    /* Secondary link */
+    .link-404 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--brand-blue);
+      text-decoration: none;
+      border-bottom: 2px solid var(--muted-grey);
+      transition: all 0.25s ease;
+      padding-bottom: 0.125rem;
+    }
+
+    .link-404:hover {
+      color: var(--secondary-purple);
+      border-bottom-color: var(--secondary-purple);
+    }
+
+    /* Divider line */
+    .divider-404 {
+      width: 3rem;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--muted-grey),
+        transparent
+      );
+      margin: 1rem 0;
+    }
+
+    /* Accent line under subheading */
+    .accent-line {
+      width: 4rem;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--brand-blue),
+        var(--secondary-purple)
+      );
+      margin: 0.75rem auto 1.5rem;
+    }
+
+    /* Geometric accent shapes */
+    .accent-shape {
+      position: absolute;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .shape-1 {
+      top: 10%;
+      left: 5%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, var(--brand-blue), transparent);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .shape-2 {
+      bottom: 15%;
+      right: 8%;
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(135deg, var(--secondary-purple), transparent);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: float 10s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 640px) {
+      .container-404 {
+        padding: 1.5rem;
+      }
+
+      .hero-404 {
+        margin-bottom: 0.5rem;
+      }
+
+      .subheading-404 {
+        max-width: 100%;
+      }
+
+      .description-404 {
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .shape-1,
+      .shape-2 {
+        opacity: 0.04;
+      }
+    }
+
+    /* Ensure text selection is smooth */
+    ::selection {
+      background-color: var(--brand-blue);
+      color: white;
+    }
+  </style>
+
+  <div class="blueprint-bg">
+    <!-- Decorative accent shapes -->
+    <div class="accent-shape shape-1"></div>
+    <div class="accent-shape shape-2"></div>
+
+    <!-- Main container -->
+    <div class="container-404">
+      <!-- Handwritten annotation -->
+      <div class="annotation">Oops!</div>
+
+      <!-- Hero 404 -->
+      <div class="hero-404">
+        4<span class="morphing-zero"></span>4
+      </div>
+
+      <!-- Divider -->
+      <div class="divider-404"></div>
+
+      <!-- Subheading -->
+      <h1 class="subheading-404">
+        This page wandered off into the digital void
+      </h1>
+
+      <!-- Accent line -->
+      <div class="accent-line"></div>
+
+      <!-- Description -->
+      <p class="description-404">
+        The page you're looking for doesn't exist or has been moved. Let's get
+        you back on track.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mb-6">
+        <a href="/" class="btn-404">
+          <span>↑</span>
+          Back to Home
+        </a>
+        <a href="/work" class="link-404">
+          Explore My Work →
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
