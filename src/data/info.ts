@@ -64,8 +64,7 @@ export const skills = {
   tools: [
     "Git",
     "GitHub",
-    "Postman",
-    "RESTful APIs"
+    "Postman"
   ]
 };
 

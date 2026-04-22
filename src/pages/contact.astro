@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Blob from "../components/Blob.astro";
@@ -28,8 +29,8 @@ const email = "ananthapadmanabhanm98@gmail.com";
 						class="group flex items-center justify-between p-8 rounded-[2rem] bg-white border border-border hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl shadow-foreground/5"
 					>
 						<div class="flex items-center gap-6">
-							<div class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+							<div class="w-14 h-14 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform p-3">
+								<Icon name="lucide:mail" class="w-full h-full" />
 							</div>
 							<div class="flex flex-col">
 								<span class="text-[10px] uppercase font-bold tracking-[0.2em] text-foreground/40 mb-1">Email Me</span>
@@ -37,7 +38,7 @@ const email = "ananthapadmanabhanm98@gmail.com";
 							</div>
 						</div>
 						<div class="w-10 h-10 rounded-full bg-background flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
-							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+							<Icon name="lucide:arrow-up-right" class="w-5 h-5" />
 						</div>
 					</a>
 
@@ -49,11 +50,11 @@ const email = "ananthapadmanabhanm98@gmail.com";
 							class="group p-8 rounded-[2rem] bg-white border border-border hover:border-primary/30 transition-all duration-500 shadow-sm hover:shadow-xl shadow-foreground/5"
 						>
 							<div class="flex items-center justify-between mb-6">
-								<div class="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-									<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+								<div class="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center text-primary group-hover:scale-110 transition-transform p-2.5">
+									<Icon name="lucide:file-user" class="w-full h-full" />
 								</div>
 								<div class="text-foreground/20 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+									<Icon name="lucide:arrow-up-right" class="w-5 h-5" />
 								</div>
 							</div>
 							<h4 class="text-xl font-bold text-foreground capitalize">My Resume</h4>
@@ -66,13 +67,13 @@ const email = "ananthapadmanabhanm98@gmail.com";
 								class="group p-8 rounded-[2rem] bg-white border border-border hover:border-secondary/30 transition-all duration-500 shadow-sm hover:shadow-xl shadow-foreground/5"
 							>
 								<div class="flex items-center justify-between mb-6">
-									<div class="w-12 h-12 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
-										{platform === 'github' && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5a4.8 4.8 0 0 0-1.5-3.5 4.8 4.8 0 0 0-1-3.5S15.8 2 13 4.5a15.4 15.4 0 0 0-8 0C2.2 2 1.2 2 1.2 2a4.8 4.8 0 0 0-1 3.5 4.8 4.8 0 0 0-1.5 3.5c0 3.5 3 5.5 6 5.5a4.8 4.8 0 0 0-1 3.5v4"/><path d="M9 19c-5 1.5-5-2.5-7-3"/></svg>}
-										{platform === 'linkedin' && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>}
-										{platform === 'medium' && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/><path d="M20 4c2.209 0 4 3.582 4 8s-1.791 8-4 8-4-3.582-4-8 1.791-8 4-8z"/><path d="M24 12c0 3.866-.448 7-1 7s-1-3.134-1-7 .448-7 1-7 1 3.134 1 7z"/></svg>}
+									<div class="w-12 h-12 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:scale-110 transition-transform p-2.5">
+										{platform === 'github' && <Icon name="simple-icons:github" class="w-full h-full" />}
+										{platform === 'linkedin' && <Icon name="simple-icons:linkedin" class="w-full h-full" />}
+										{platform === 'medium' && <Icon name="simple-icons:medium" class="w-full h-full" />}
 									</div>
 									<div class="text-foreground/20 group-hover:text-secondary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
-										<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+										<Icon name="lucide:arrow-up-right" class="w-5 h-5" />
 									</div>
 								</div>
 								<h4 class="text-xl font-bold text-foreground capitalize">{platform}</h4>
