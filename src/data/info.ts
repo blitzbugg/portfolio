@@ -54,6 +54,13 @@ export const projects = [
     link: "",
     github: "https://github.com/blitzbugg/hms",
   },
+  {
+    title: "Appukuttan Music Bot 🎵",
+    description: "Discord music bot with spotify integration and song suggestions based on user preferences.",
+    tech: ["Go", "Discord API", "Spotify API"],
+    link: "https://discord.com/oauth2/authorize?client_id=1344338845126230036",
+    github: "https://github.com/blitzbugg/appukuttan-bot",
+  }
 ];
 
 export const skills = {
@@ -76,6 +83,8 @@ export const skills = {
     "Prisma ORM",
     "Payload CMS",
     "Socket.IO",
+    "PHP",
+    "Go",
   ],
   database: [
     "MongoDB",
