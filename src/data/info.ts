@@ -13,33 +13,47 @@ export const experience = [
   {
     company: "Freelance",
     role: "Full Stack Developer",
-    period: "2024 – Present",
-    description: "Worked as a freelance developer delivering production-ready web solutions. Built and deployed a full-featured CMS for Sree Budha Central School (SBCS), including role-based dashboards, secure APIs, and optimized performance.",
+    period: "2025 – Present",
+    description: "Engineered and maintained end-to-end web applications for clients, overseeing the full SDLC from initial schema design to production deployment. Configured production Linux VPS infrastructure with NGINX reverse proxy.",
   }
 ];
 
 export const projects = [
   {
-    title: "Official Website for a School (SBCS) 🏫",
-    description: "Full CMS for real institution with role-based dashboard, PostgreSQL + Next.js, and production deployment with NGINX.",
-    tech: ["Next.js", "PostgreSQL", "NGINX", "Node.js"],
+    title: "School CMS – Sree Budha Central School 🏫",
+    description: "Built institutional website (Next.js) and comprehensive admin panel (Payload CMS) for real school. Designed PostgreSQL schema with efficient data retrieval for institutional content management.",
+    tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
     link: "https://sbcs.edu.in",
     github: "https://github.com/blitzbugg/school-cms",
   },
   {
     title: "PropEase 🏠",
-    description: "Real estate platform featuring authentication, listings, and filters with a mobile-first UI.",
-    tech: ["MERN Stack", "React", "MongoDB", "Tailwind"],
+    description: "Complete real estate marketplace with secure authentication and property listing management. Implemented CRUD operations with image upload, advanced filtering, and responsive UI across devices.",
+    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
     link: "https://prop-ease-beryl.vercel.app/",
     github: "https://github.com/blitzbugg/propease",
   },
   {
     title: "Ezhuth 📝",
-    description: "Real-time collaborative whiteboard with WebSockets + Canvas, featuring Kerala-inspired UI and typography.",
-    tech: ["WebSockets", "Canvas", "React", "Node.js"],
+    description: "Real-time collaborative whiteboard using React Canvas API with Socket.IO WebSocket synchronization. Optimized dual-canvas rendering (committed + active layers) with Zustand state management. Implemented UUID-based room identification with Kerala-inspired design.",
+    tech: ["React", "Node.js", "Socket.IO", "Canvas API"],
     link: "https://ezhuth.vercel.app",
     github: "https://github.com/blitzbugg/ezhuth",
-  }
+  },
+  {
+    title: "Kerala Decides 2026 👆",
+    description: "Created a platform for comparing election manifestos of Kerala political parties with a user-friendly interface and comprehensive data visualization.",
+    tech: ["Reactjs","Vite","Tailwind CSS"],
+    link: "https://kerala-decides.vercel.app/",
+    github: "https://github.com/blitzbugg/kerala-decides",
+  },
+  {
+    title: "HMS 🏥",
+    description: "Hospital Management System with role-based access and responsive design.",
+    tech: ["PHP", "MySQL", "Bootstrap"],
+    link: "",
+    github: "https://github.com/blitzbugg/hms",
+  },
 ];
 
 export const skills = {
@@ -47,14 +61,21 @@ export const skills = {
     "HTML5",
     "CSS3",
     "JavaScript (ES6+)",
+    "TypeScript",
     "React",
     "Next.js",
-    "Tailwind CSS"
+    "Astro",
+    "Vite",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Canvas API"
   ],
   backend: [
     "Node.js",
     "Express.js",
-    "TypeScript"
+    "Prisma ORM",
+    "Payload CMS",
+    "Socket.IO",
   ],
   database: [
     "MongoDB",
@@ -64,7 +85,9 @@ export const skills = {
   tools: [
     "Git",
     "GitHub",
-    "Postman"
+    "Postman",
+    "NGINX",
+    "Alma Linux",
   ]
 };
 

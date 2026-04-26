@@ -24,13 +24,22 @@ const iconMap: Record<string, string> = {
   "Git": "simple-icons:git",
   "GitHub": "simple-icons:github",
   "Postman": "simple-icons:postman",
+  "Prisma ORM": "simple-icons:prisma",
+  "Socket.IO": "simple-icons:socketdotio",
+  "Canvas API": "simple-icons:canvas",
+  "NGINX": "simple-icons:nginx",
+  "Alma Linux": "simple-icons:almalinux",
+  "Bootstrap": "simple-icons:bootstrap",
+  "Payload CMS": "simple-icons:payloadcms",
+  "Astro": "simple-icons:astro",
+  "Vite": "simple-icons:vite",
 };
 
 const iconName = iconMap[name] || "lucide:code";
 ---
 
 <div class="flex items-center gap-6 px-8 py-6 rounded-3xl bg-white border border-border hover:border-primary/40 transition-all duration-500 hover:bg-background/50 cursor-default group shadow-sm hover:shadow-xl shadow-foreground/5 reveal-scale">
-  <div class="w-12 h-12 flex items-center justify-center text-primary group-hover:scale-110 transition-transform bg-background rounded-2xl p-2.5">
+  <div class="w-12 h-12 flex items-center justify-center group-hover:text-primary group-hover:scale-110 transition-transform bg-background rounded-2xl p-2.5">
     <Icon name={iconName} class="w-full h-full" />
   </div>
   <div class="flex flex-col">
