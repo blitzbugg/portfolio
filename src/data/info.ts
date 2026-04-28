@@ -21,46 +21,60 @@ export const experience = [
 export const projects = [
   {
     title: "School CMS – Sree Budha Central School 🏫",
-    description: "Built institutional website (Next.js) and comprehensive admin panel (Payload CMS) for real school. Designed PostgreSQL schema with efficient data retrieval for institutional content management.",
+    description:
+      "Built a full institutional website and admin panel for a CBSE school in Kerala, enabling efficient content management with a structured PostgreSQL schema.",
     tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
     link: "https://sbcs.edu.in",
     github: "https://github.com/blitzbugg/school-cms",
   },
   {
     title: "PropEase 🏠",
-    description: "Complete real estate marketplace with secure authentication and property listing management. Implemented CRUD operations with image upload, advanced filtering, and responsive UI across devices.",
-    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    description:
+      "A complete real estate platform with authentication, property listings, advanced filtering, and an integrated chat system for direct user communication.",
+    tech: ["React", "Node.js", "MongoDB", "Socket.IO"],
     link: "https://prop-ease-beryl.vercel.app/",
     github: "https://github.com/blitzbugg/propease",
   },
   {
     title: "Ezhuth 📝",
-    description: "Real-time collaborative whiteboard using React Canvas API with Socket.IO WebSocket synchronization. Optimized dual-canvas rendering (committed + active layers) with Zustand state management. Implemented UUID-based room identification with Kerala-inspired design.",
+    description:
+      "Real-time collaborative whiteboard with WebSocket synchronization and optimized dual-canvas rendering for smooth multi-user interaction.",
     tech: ["React", "Node.js", "Socket.IO", "Canvas API"],
     link: "https://ezhuth.vercel.app",
     github: "https://github.com/blitzbugg/ezhuth",
   },
   {
     title: "Kerala Decides 2026 👆",
-    description: "Created a platform for comparing election manifestos of Kerala political parties with a user-friendly interface and comprehensive data visualization.",
-    tech: ["Reactjs","Vite","Tailwind CSS"],
+    description:
+      "Platform for comparing election manifestos of Kerala political parties with a clean UI and structured data visualization.",
+    tech: ["React", "Vite", "Tailwind CSS"],
     link: "https://kerala-decides.vercel.app/",
     github: "https://github.com/blitzbugg/kerala-decides",
   },
   {
     title: "HMS 🏥",
-    description: "Hospital Management System with role-based access and responsive design.",
+    description:
+      "Hospital Management System with role-based access and responsive dashboard interfaces.",
     tech: ["PHP", "MySQL", "Bootstrap"],
     link: "",
     github: "https://github.com/blitzbugg/hms",
   },
   {
     title: "Appukuttan Music Bot 🎵",
-    description: "Discord music bot with spotify integration and song suggestions based on user preferences.",
+    description:
+      "Discord music bot with Spotify integration and personalized song recommendations.",
     tech: ["Go", "Discord API", "Spotify API"],
     link: "https://discord.com/oauth2/authorize?client_id=1344338845126230036",
     github: "https://github.com/blitzbugg/appukuttan-bot",
-  }
+  },
+  {
+  title: "Kuripp 📒",
+  description:
+    "Minimal offline-first desktop app combining todo management and note-taking, built with Electron and React with local data storage for complete privacy.",
+  tech: ["Electron", "React", "Vite", "Zustand", "Tailwind CSS"],
+  link: "https://kuripp.vercel.app/",
+  github: "https://github.com/blitzbugg/kuripp",
+}
 ];
 
 export const skills = {
