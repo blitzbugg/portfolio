@@ -74,6 +74,14 @@ export const projects = [
   tech: ["Electron", "React", "Vite", "Zustand", "Tailwind CSS"],
   link: "https://kuripp.vercel.app/",
   github: "https://github.com/blitzbugg/kuripp",
+},
+  {
+  title: "LunaFlow 🌸",
+  description:
+    "Modern period tracking application designed for privacy and ease. Features smart calendar tracking, daily symptom logging, cycle insights, and discreet reminders with a serene, minimalist design.",
+  tech: ["Expo", "React Native", "TypeScript", "Zustand"],
+  link: "https://lunaflow.in",
+  github: "https://github.com/blitzbugg/luna-flow",
 }
 ];
 
