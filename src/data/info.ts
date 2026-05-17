@@ -82,7 +82,15 @@ export const projects = [
   tech: ["Expo", "React Native", "TypeScript", "Zustand"],
   link: "https://lunaflow.in",
   github: "https://github.com/blitzbugg/luna-flow",
-}
+},
+{
+    title: "pkgsafe 🔐",
+    description:
+      "Lightweight VS Code extension that monitors package.json for known security vulnerabilities in real-time. Combines npm Advisory API and OSV.dev for comprehensive threat detection with zero clutter—blazing fast scans and contextual hovers on demand.",
+    tech: ["JavaScript", "VS Code API", "npm Advisory API", "OSV.dev", "VScode Extension"],
+    link: "https://marketplace.visualstudio.com/items?itemName=AnanthapadmanabhanM.pkgsafe",
+    github: "https://github.com/blitzbugg/pkgsafe",
+  },
 ];
 
 export const skills = {
