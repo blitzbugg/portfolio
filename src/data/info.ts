@@ -28,6 +28,14 @@ export const projects = [
     github: "https://github.com/blitzbugg/school-cms",
   },
   {
+  title: "School CMS – Sree Narayana Public School 🏫",
+  description:
+    "Built and delivered a full institutional website and admin panel for a school in Kerala, featuring a custom frontend, Payload CMS administration, and a structured PostgreSQL backend for streamlined content management.",
+  tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
+  link: "https://www.snpskizhavoor.org/",
+  github: "https://github.com/blitzbugg/snpc-client",
+},
+  {
     title: "PropEase 🏠",
     description:
       "A complete real estate platform with authentication, property listings, advanced filtering, and an integrated chat system for direct user communication.",
