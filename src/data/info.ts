@@ -20,12 +20,12 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Nudge 🦦",
+    title: "School CMS – Sree Narayana Public School 🏫",
     description:
-      "A simple, friendly habit tracker app designed to help users build better habits one day at a time. Features daily habit tracking, streak counters, progress visualization, and a local-first offline-capable architecture with no account required.",
-    tech: ["React Native", "Expo", "TypeScript", "SQLite", "React Native Reanimated"],
-    link: "https://github.com/blitzbugg/nudge",
-    github: "https://github.com/blitzbugg/nudge",
+      "Built and delivered a full institutional website and admin panel for a school in Kerala, featuring a custom frontend, Payload CMS administration, and a structured PostgreSQL backend for streamlined content management.",
+    tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
+    link: "https://www.snpskizhavoor.org/",
+    github: "https://github.com/blitzbugg/snpc-client",
   },
   {
     title: "School CMS – Sree Budha Central School 🏫",
@@ -34,14 +34,6 @@ export const projects = [
     tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
     link: "https://sbcs.edu.in",
     github: "https://github.com/blitzbugg/school-cms",
-  },
-  {
-    title: "School CMS – Sree Narayana Public School 🏫",
-    description:
-      "Built and delivered a full institutional website and admin panel for a school in Kerala, featuring a custom frontend, Payload CMS administration, and a structured PostgreSQL backend for streamlined content management.",
-    tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
-    link: "https://www.snpskizhavoor.org/",
-    github: "https://github.com/blitzbugg/snpc-client",
   },
   {
     title: "PropEase 🏠",
@@ -106,6 +98,14 @@ export const projects = [
     tech: ["JavaScript", "VS Code API", "npm Advisory API", "OSV.dev", "VScode Extension"],
     link: "https://marketplace.visualstudio.com/items?itemName=AnanthapadmanabhanM.pkgsafe",
     github: "https://github.com/blitzbugg/pkgsafe",
+  },
+  {
+    title: "Nudge 🦦",
+    description:
+      "A simple, friendly habit tracker app designed to help users build better habits one day at a time. Features daily habit tracking, streak counters, progress visualization, and a local-first offline-capable architecture with no account required.",
+    tech: ["React Native", "Expo", "TypeScript", "SQLite", "React Native Reanimated"],
+    link: "https://github.com/blitzbugg/nudge",
+    github: "https://github.com/blitzbugg/nudge",
   },
 ];
 
