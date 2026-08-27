@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Ananthapadmanabhan",
-  role: "Web Developer",
-  summary: "Web developer passionate about building scalable, production-ready web applications with experience in React, Node.js, Next.js, TypeScript, PostgreSQL, and MongoDB. Built and deployed real-world systems including a live CMS.",
+  role: "Full-Stack & App Developer",
+  summary: "Full-stack engineer and app developer passionate about building scalable, production-ready web and mobile applications. Experienced with MERN Stack, Next.js, React Native, TypeScript, PostgreSQL, MongoDB, and modern development patterns. Currently pursuing MCA with focus on system design and architecture.",
   socials: {
     github: "https://github.com/blitzbugg",
     linkedin: "https://www.linkedin.com/in/ananthapadmanabhan-m/",
@@ -20,6 +20,14 @@ export const experience = [
 
 export const projects = [
   {
+    title: "Nudge 🦦",
+    description:
+      "A simple, friendly habit tracker app designed to help users build better habits one day at a time. Features daily habit tracking, streak counters, progress visualization, and a local-first offline-capable architecture with no account required.",
+    tech: ["React Native", "Expo", "TypeScript", "SQLite", "React Native Reanimated"],
+    link: "https://github.com/blitzbugg/nudge",
+    github: "https://github.com/blitzbugg/nudge",
+  },
+  {
     title: "School CMS – Sree Budha Central School 🏫",
     description:
       "Built a full institutional website and admin panel for a CBSE school in Kerala, enabling efficient content management with a structured PostgreSQL schema.",
@@ -28,13 +36,13 @@ export const projects = [
     github: "https://github.com/blitzbugg/school-cms",
   },
   {
-  title: "School CMS – Sree Narayana Public School 🏫",
-  description:
-    "Built and delivered a full institutional website and admin panel for a school in Kerala, featuring a custom frontend, Payload CMS administration, and a structured PostgreSQL backend for streamlined content management.",
-  tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
-  link: "https://www.snpskizhavoor.org/",
-  github: "https://github.com/blitzbugg/snpc-client",
-},
+    title: "School CMS – Sree Narayana Public School 🏫",
+    description:
+      "Built and delivered a full institutional website and admin panel for a school in Kerala, featuring a custom frontend, Payload CMS administration, and a structured PostgreSQL backend for streamlined content management.",
+    tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
+    link: "https://www.snpskizhavoor.org/",
+    github: "https://github.com/blitzbugg/snpc-client",
+  },
   {
     title: "PropEase 🏠",
     description:
@@ -76,22 +84,22 @@ export const projects = [
     github: "https://github.com/blitzbugg/appukuttan-bot",
   },
   {
-  title: "Kuripp 📒",
-  description:
-    "Minimal offline-first desktop app combining todo management and note-taking, built with Electron and React with local data storage for complete privacy.",
-  tech: ["Electron", "React", "Vite", "Zustand", "Tailwind CSS"],
-  link: "https://kuripp.vercel.app/",
-  github: "https://github.com/blitzbugg/kuripp",
-},
+    title: "Kuripp 📒",
+    description:
+      "Minimal offline-first desktop app combining todo management and note-taking, built with Electron and React with local data storage for complete privacy.",
+    tech: ["Electron", "React", "Vite", "Zustand", "Tailwind CSS"],
+    link: "https://kuripp.vercel.app/",
+    github: "https://github.com/blitzbugg/kuripp",
+  },
   {
-  title: "LunaFlow 🌸",
-  description:
-    "Modern period tracking application designed for privacy and ease. Features smart calendar tracking, daily symptom logging, cycle insights, and discreet reminders with a serene, minimalist design.",
-  tech: ["Expo", "React Native", "TypeScript", "Zustand"],
-  link: "https://lunaflow.in",
-  github: "https://github.com/blitzbugg/luna-flow",
-},
-{
+    title: "LunaFlow 🌸",
+    description:
+      "Modern period tracking application designed for privacy and ease. Features smart calendar tracking, daily symptom logging, cycle insights, and discreet reminders with a serene, minimalist design.",
+    tech: ["Expo", "React Native", "TypeScript", "Zustand"],
+    link: "https://lunaflow.in",
+    github: "https://github.com/blitzbugg/luna-flow",
+  },
+  {
     title: "pkgsafe 🔐",
     description:
       "Lightweight VS Code extension that monitors package.json for known security vulnerabilities in real-time. Combines npm Advisory API and OSV.dev for comprehensive threat detection with zero clutter—blazing fast scans and contextual hovers on demand.",
@@ -108,46 +116,78 @@ export const skills = {
     "JavaScript (ES6+)",
     "TypeScript",
     "React",
-    "Next.js",
+    "React Hooks",
+    "Next.js (App Router & Pages Router)",
     "Astro",
     "Vite",
     "Tailwind CSS",
     "Bootstrap",
-    "Canvas API"
+    "Canvas API",
+    "Responsive Design",
+    "Performance Optimization"
+  ],
+  mobile: [
+    "React Native",
+    "Expo",
+    "React Native Reanimated",
+    "Expo Router",
+    "Cross-platform Development",
+    "Mobile Performance",
+    "Native Module Integration"
   ],
   backend: [
     "Node.js",
     "Express.js",
-    "Prisma ORM",
-    "Payload CMS",
+    "RESTful API Design",
+    "GraphQL",
     "Socket.IO",
+    "Middleware & Authentication",
+    "Error Handling",
+    "Prisma ORM",
+    "Sequelize",
+    "Payload CMS",
     "PHP",
     "Go",
   ],
   database: [
     "MongoDB",
     "PostgreSQL",
-    "MySQL"
+    "MySQL",
+    "SQLite",
+    "Database Design",
+    "Query Optimization",
+    "Schema Migration"
   ],
   tools: [
-    "Git",
-    "GitHub",
-    "Postman",
+    "Git & GitHub",
+    "Linux (Alma Linux)",
     "NGINX",
-    "Alma Linux",
+    "Docker",
+    "Postman",
+    "VS Code",
+    "Development Environment Setup",
+    "Package Managers (npm, yarn)"
+  ],
+  soft: [
+    "Clean Code Principles",
+    "Version Control",
+    "Problem Solving",
+    "Debugging & Troubleshooting",
+    "Documentation",
+    "Collaborative Development"
   ]
 };
 
 export const education = [
   {
     degree: "MCA",
-    institution: "Mar Athanasios College For Advanced Studies (MACFAST)", // Placeholder
+    institution: "Mar Athanasios College For Advanced Studies (MACFAST)",
     period: "2025–2027",
-    description: "Currently pursuing Master of Computer Applications.",
+    description: "Currently pursuing Master of Computer Applications with focus on system design and advanced backend architecture.",
   },
   {
     degree: "BCA",
-    institution: "Kristu Jyoti College of Management and Technology", // Placeholder
+    institution: "Kristu Jyoti College of Management and Technology",
     period: "Graduated 2025",
     description: "Successfully completed Bachelor of Computer Applications.",
   }
