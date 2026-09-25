@@ -2,21 +2,60 @@
 import Layout from "../../layouts/Layout.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
-import { projects } from "../../data/info";
+import { projects, projectCategoryOrder } from "../../data/info";
+
+// Categories to show as toggles, in a fixed order, limited to ones that
+// actually have projects. Anything with an unrecognized category still
+// renders (bucketed as "Other") so nothing silently disappears.
+const usedCategories = projectCategoryOrder.filter((category) =>
+  projects.some((p) => p.category === category)
+);
+const hasOther = projects.some(
+  (p) => !projectCategoryOrder.includes(p.category as (typeof projectCategoryOrder)[number])
+);
+const categories = hasOther ? [...usedCategories, "Other"] : usedCategories;
 ---
 
 <Layout title="Projects">
   <SectionHeader title="Selected Projects" subtitle="Builds" />
   
-  <p class="text-xl text-muted-foreground mb-16 max-w-2xl leading-relaxed">
+  <p class="text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
     A collection of systems I've built, ranging from institutional CMS platforms to real-time collaborative whiteboards.
   </p>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    {projects.map((project) => (
-      <ProjectCard {...project} />
+  <div id="category-toggles" class="flex flex-wrap gap-3 mb-16">
+    <button
+      type="button"
+      class="category-toggle is-active px-6 py-3 rounded-2xl border border-[#E0E0E0] bg-white text-xs font-black uppercase tracking-[0.2em] text-[#2E2E2E]/60 transition-all duration-300 shadow-sm hover:border-primary/40"
+      data-category="All"
+    >
+      All
+    </button>
+    {categories.map((category) => (
+      <button
+        type="button"
+        class="category-toggle px-6 py-3 rounded-2xl border border-[#E0E0E0] bg-white text-xs font-black uppercase tracking-[0.2em] text-[#2E2E2E]/60 transition-all duration-300 shadow-sm hover:border-primary/40"
+        data-category={category}
+      >
+        {category}
+      </button>
     ))}
   </div>
+
+  <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {projects.map((project) => (
+      <div
+        class="project-card-wrapper"
+        data-category={categories.includes(project.category as string) ? project.category : "Other"}
+      >
+        <ProjectCard {...project} />
+      </div>
+    ))}
+  </div>
+
+  <p id="empty-state" class="hidden text-center text-[#2E2E2E]/50 mt-16">
+    No projects match the selected categories.
+  </p>
 
   <div class="mt-32 text-center p-16 rounded-[3rem] bg-white border border-[#E0E0E0] shadow-sm shadow-[#2E2E2E]/5">
     <h3 class="text-3xl font-black mb-6 text-[#2E2E2E]">Have an idea?</h3>
@@ -28,3 +67,40 @@ import { projects } from "../../data/info";
     </a>
   </div>
 </Layout>
+
+<style>
+  .category-toggle.is-active {
+    background: #2E2E2E;
+    color: #fff;
+    border-color: #2E2E2E;
+  }
+</style>
+
+<script>
+  // Single-select category toggles: clicking one activates only that one
+  // and deactivates the rest. "All" clears the filter back to everything.
+  const toggles = Array.from(document.querySelectorAll<HTMLButtonElement>(".category-toggle"));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>(".project-card-wrapper"));
+  const emptyState = document.getElementById("empty-state");
+
+  function applyFilter(selected: string) {
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const show = selected === "All" || card.dataset.category === selected;
+      card.style.display = show ? "" : "none";
+      if (show) visibleCount++;
+    });
+
+    emptyState?.classList.toggle("hidden", visibleCount !== 0);
+  }
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      toggles.forEach((t) => t.classList.remove("is-active"));
+      toggle.classList.add("is-active");
+      applyFilter(toggle.dataset.category ?? "All");
+    });
+  });
+
+  applyFilter("All");
+</script>

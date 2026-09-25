@@ -26,6 +26,7 @@ export const projects = [
     tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
     link: "https://www.snpskizhavoor.org/",
     github: "https://github.com/blitzbugg/snpc-client",
+    category: "Web Apps",
   },
   {
     title: "School CMS – Sree Budha Central School 🏫",
@@ -34,6 +35,7 @@ export const projects = [
     tech: ["Next.js", "Payload CMS", "PostgreSQL", "NGINX"],
     link: "https://sbcs.edu.in",
     github: "https://github.com/blitzbugg/school-cms",
+    category: "Web Apps",
   },
   {
     title: "PropEase 🏠",
@@ -42,6 +44,7 @@ export const projects = [
     tech: ["React", "Node.js", "MongoDB", "Socket.IO"],
     link: "https://prop-ease-beryl.vercel.app/",
     github: "https://github.com/blitzbugg/propease",
+    category: "Web Apps",
   },
   {
     title: "Ezhuth 📝",
@@ -50,6 +53,7 @@ export const projects = [
     tech: ["React", "Node.js", "Socket.IO", "Canvas API"],
     link: "https://ezhuth.vercel.app",
     github: "https://github.com/blitzbugg/ezhuth",
+    category: "Web Apps",
   },
   {
     title: "Kerala Decides 2026 👆",
@@ -58,6 +62,7 @@ export const projects = [
     tech: ["React", "Vite", "Tailwind CSS"],
     link: "https://kerala-decides.vercel.app/",
     github: "https://github.com/blitzbugg/kerala-decides",
+    category: "Web Apps",
   },
   {
     title: "HMS 🏥",
@@ -66,6 +71,7 @@ export const projects = [
     tech: ["PHP", "MySQL", "Bootstrap"],
     link: "",
     github: "https://github.com/blitzbugg/hms",
+    category: "Web Apps",
   },
   {
     title: "Appukuttan Music Bot 🎵",
@@ -74,6 +80,7 @@ export const projects = [
     tech: ["Go", "Discord API", "Spotify API"],
     link: "https://discord.com/oauth2/authorize?client_id=1344338845126230036",
     github: "https://github.com/blitzbugg/appukuttan-bot",
+    category: "Bots",
   },
   {
     title: "Kuripp 📒",
@@ -82,6 +89,7 @@ export const projects = [
     tech: ["Electron", "React", "Vite", "Zustand", "Tailwind CSS"],
     link: "https://kuripp.vercel.app/",
     github: "https://github.com/blitzbugg/kuripp",
+    category: "Apps",
   },
   {
     title: "LunaFlow 🌸",
@@ -90,6 +98,7 @@ export const projects = [
     tech: ["Expo", "React Native", "TypeScript", "Zustand"],
     link: "https://lunaflow.in",
     github: "https://github.com/blitzbugg/luna-flow",
+    category: "Apps",
   },
   {
     title: "pkgsafe 🔐",
@@ -98,6 +107,7 @@ export const projects = [
     tech: ["JavaScript", "VS Code API", "npm Advisory API", "OSV.dev", "VScode Extension"],
     link: "https://marketplace.visualstudio.com/items?itemName=AnanthapadmanabhanM.pkgsafe",
     github: "https://github.com/blitzbugg/pkgsafe",
+    category: "Tools",
   },
   {
     title: "Nudge 🦦",
@@ -106,8 +116,12 @@ export const projects = [
     tech: ["React Native", "Expo", "TypeScript", "SQLite", "React Native Reanimated"],
     link: "https://github.com/blitzbugg/nudge",
     github: "https://github.com/blitzbugg/nudge",
+    category: "Apps",
   },
 ];
+
+// Fixed display order for project categories on the Projects page
+export const projectCategoryOrder = ["Web Apps", "Apps", "Bots", "Tools"] as const;
 
 export const skills = {
   frontend: [
