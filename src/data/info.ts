@@ -118,6 +118,15 @@ export const projects = [
     github: "https://github.com/blitzbugg/nudge",
     category: "Apps",
   },
+  {
+    title: "SafePhP 🔒",
+    description:
+      "Local-first security checks for PHP projects inside VS Code. It reports what it can observe about PHP runtime versions, advisory-relevant configuration, Composer dependencies and a small set of risky source patterns — with the source of every observation named.",
+    tech: ["PHP", "VS Code API", "Composer", "Static Analysis"],
+    link: "https://github.com/blitzbugg/SafePHP",
+    github: "https://github.com/blitzbugg/SafePHP",
+    category: "Tools",
+  }
 ];
 
 // Fixed display order for project categories on the Projects page
